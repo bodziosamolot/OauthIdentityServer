@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Client/Client/bin
+/Client/Client/Content
+/Client/Client/fonts
+/Client/Client/node_modules
+/Client/Client/obj/Debug
+/Client/Client/Scripts
+/Client/packages

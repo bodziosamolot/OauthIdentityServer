@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+
+    <!-- prevent the favicon issue-->
+    <link rel="shortcut icon" href="">
+</head>
+<body ng-app="app" ng-controller="MainController as vm">
+    <div class="container">
+
+        <div class="panel panel-default panel-body">
+            <div ui-view ng-hide="hideMainView">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/main.controller.js"></script>
+    <script src="app/core/login.controller.js"></script>
+    <script src="app/core/auth.service.js"></script>
+
+    <script src="app/appModule.js"></script>
+    <script src="app/appConfig.js"></script>
+    <script src="app/appRouteConfig.js"></script>
+    <script src="app/app.js"></script>
+
+</body>
+</html>
