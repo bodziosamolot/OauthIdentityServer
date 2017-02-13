@@ -36,6 +36,8 @@ namespace AuthServer
                 .AddInMemoryApiResources(new List<ApiResource>())
                 .AddTestUsers(new List<IdentityServer4.Test.TestUser>())
                 .AddTemporarySigningCredential();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,11 +51,9 @@ namespace AuthServer
             }
 
             app.UseIdentityServer();
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
