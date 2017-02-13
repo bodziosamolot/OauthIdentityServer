@@ -9,7 +9,7 @@
 
         //$httpProvider.interceptors.push('authInterceptorService');
 
-        $urlRouterProvider.otherwise('login');
+        $urlRouterProvider.otherwise('home');
 
         $stateProvider
             .state('login',
@@ -17,6 +17,18 @@
                 url: '/login',
                 templateUrl: '/app/core/login.html',
                 controller: 'LoginController',
+                controllerAs: 'vm'
+            }).state('home',
+            {
+                url: '/home',
+                templateUrl: '/app/core/home.html',
+                controller: 'HomeController',
+                controllerAs: 'vm'
+            }).state('loggedIn',
+            {
+                url: '/loggedIn',
+                templateUrl: '/app/core/loggedIn.html',
+                controller: 'loggedInController',
                 controllerAs: 'vm'
             });
 

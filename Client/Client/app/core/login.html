@@ -12,7 +12,7 @@
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.performLogin(user.userName, user.password)">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.login(user.userName, user.password)">Sign in</button>
             <label ng-model="errorMessage" ng-show="errorMessage">Password</label>
         </form>
     </div>

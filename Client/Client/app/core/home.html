@@ -3,8 +3,12 @@
         <h1 ng-cloak restrict access="Admin">Assigned role: {{vm.authData.roles}}</h1>
         <h1>Hello, {{ vm.test }}!</h1>
         <p>Welcome to BJJ Club.</p>
-        <p class="perspective-button-parrent">
-            <a class="btn btn-primary btn-lg perspective-button" role="button">Learn more &raquo;</a>
-        </p>
+        <input oauth-login-button
+               type="button"
+               value="Login"
+               state="vm.loginUrl"
+               class="btn"/>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.performLogin()">Sign in</button>
     </div>
 </div>

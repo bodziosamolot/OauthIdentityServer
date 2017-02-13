@@ -51,9 +51,9 @@ namespace AuthServer
 
             services.AddIdentityServer()
                 .AddSigningCredential(cert)
-                .AddInMemoryClients(new List<Client>())
-                .AddInMemoryIdentityResources(new List<IdentityResource>())
-                .AddInMemoryApiResources(new List<ApiResource>())
+                .AddInMemoryClients(Config.GetClients())
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
                 .AddAspNetIdentity<ApplicationUser>()
                 .AddTemporarySigningCredential()
                 .AddProfileService<IdentityWithAdditionalClaimsProfileService>();

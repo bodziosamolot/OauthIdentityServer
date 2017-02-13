@@ -68,8 +68,12 @@
   <ItemGroup>
     <Content Include="app\core\auth.service.js" />
     <Content Include="app\core\authInterceptor.service.js.js" />
+    <Content Include="app\core\constants.js" />
     <Content Include="app\core\core.module.js" />
+    <Content Include="app\core\loggedInController.js" />
+    <Content Include="app\core\loggedIn.html" />
     <Content Include="app\core\main.controller.js" />
+    <Content Include="app\core\SecurityService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -101,6 +105,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="package.json" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

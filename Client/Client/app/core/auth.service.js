@@ -5,9 +5,9 @@
         .module('core.module')
         .service('authService', authService);
 
-    authService.$inject = ['$http', '$q', 'localStorageService'];
+    authService.$inject = ['$http', '$q', 'localStorageService', 'config'];
 
-    function authService($http, $q, localStorageService) {
+    function authService($http, $q, localStorageService, config) {
 
         var vm = this;
 
@@ -46,40 +46,43 @@
 
         function login(loginData) {
 
-            var data = "grant_type=password&username=" + loginData.username +
+            var data = "grant_type=password&username=" + loginData.userName +
                 "&password=" + loginData.password;
 
             var deferred = $q.defer();
 
-            $http.post(
-                constants.tokenServerPath + "oauth/token",
-                data,
-                {
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                }).success(function (response) {
+            deferred.resolve(
+                    $http.post(
+                    config.issuerUri + '/connect/token',
+                    data,
+                    {
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    })
+                );
+            //.success(function (response) {
 
-                    localStorageService.set(
-                        'authorizationData',
-                        {
-                            token: response.access_token,
-                            userName: loginData.username,
-                            roles: response.roles.split(','),
-                            isAuth: true
-                        });
+            //        localStorageService.set(
+            //            'authorizationData',
+            //            {
+            //                token: response.access_token,
+            //                userName: loginData.username,
+            //                roles: response.roles.split(','),
+            //                isAuth: true
+            //            });
 
-                    localStorageService.get('authorizationData');
+            //        localStorageService.get('authorizationData');
 
-                    vm.authentication.isAuth = true;
-                    vm.authentication.userName = loginData.username;
-                    vm.authentication.roles = response.roles.split(',');
+            //        vm.authentication.isAuth = true;
+            //        vm.authentication.userName = loginData.username;
+            //        vm.authentication.roles = response.roles.split(',');
 
-                    deferred.resolve(response);
+            //        deferred.resolve(response);
 
-                }).error(function (err, status) {
-                    vm.logOut();
-                    deferred.reject(err);
-                    console.log("error: " + err);
-                });
+            //    }).error(function (err, status) {
+            //        vm.logOut();
+            //        deferred.reject(err);
+            //        console.log("error: " + err);
+            //    });
 
             return deferred.promise;
 

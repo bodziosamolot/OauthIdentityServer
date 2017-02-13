@@ -14,7 +14,8 @@
         'core.module',
 
         'ui.bootstrap',
-        'LocalStorageModule'
+        'LocalStorageModule',
+        'oauth2'
 
     ]);
 }());
