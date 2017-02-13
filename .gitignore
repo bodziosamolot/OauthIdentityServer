@@ -9,3 +9,6 @@
 /Client/Client/obj/Debug
 /Client/Client/Scripts
 /Client/packages
+/AuthenticationServer/AuthServer/bin/Debug/netcoreapp1.0
+/AuthenticationServer/AuthServer/obj
+/AuthenticationServer/packages
