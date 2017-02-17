@@ -18,6 +18,13 @@ namespace IdServer.Config
                     DisplayName = "Management",
                     Description = "Management",
                     Type = ScopeType.Resource
+                },
+                new Scope
+                {
+                    Name = "secret",
+                    DisplayName = "Secret",
+                    Description = "Secret",
+                    Type = ScopeType.Resource
                 }
             };
         }

@@ -42,7 +42,7 @@
         }
 
         function _getData() {
-            ValuesResource.PublicValues.query({}, function (response) {
+            ValuesResource.PublicValues.query({ommitBearerToken: true}, function (response) {
                 vm.publicValues = response;
             }, function (error) {
                 console.log(error);

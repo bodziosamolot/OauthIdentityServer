@@ -1,21 +1,21 @@
 ﻿<div class="row">
-    <div class="col-md-offset-4">
+    <div class="col-md-offset-4 col-md-4">
         <h2>Public values</h2>
-        <ul>
-            <li ng-repeat="value in vm.publicValues">{{value}}</li>
+        <ul class="bg-success">
+            <li  ng-repeat="value in vm.publicValues">{{value}}</li>
         </ul>
 
         <h2>Management values</h2>
-        <ul ng-if="vm.authorized">
+        <ul class="bg-success" ng-if="vm.authorized">
             <li ng-repeat="value in vm.managementValues">{{value}}</li>
         </ul>
-        <h3 ng-if="!vm.authorized">Not authorized</h3>
+        <p ng-if="!vm.authorized" class="bg-danger">Not authorized</p>
 
         <h2>Secret values</h2>
-        <ul ng-if="vm.authorized">
+        <ul class="bg-success" ng-if="vm.authorized">
             <li ng-repeat="value in vm.secretValues">{{value}}</li>
         </ul>
-        <h3 ng-if="!vm.authorized">Not authorized</h3>
+        <p ng-if="!vm.authorized" class="bg-danger">Not authorized</p>
     </div>
 </div>
 <div class="row">

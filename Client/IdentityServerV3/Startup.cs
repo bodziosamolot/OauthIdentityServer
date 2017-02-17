@@ -45,6 +45,10 @@ namespace IdServer
                 };
 
                 idsrvApp.UseIdentityServer(options);
+
+                //var cert = LoadCertificate();
+                //var privateKey = cert.PrivateKey.ToXmlString(true);
+                //Console.WriteLine();
             });
         }
 

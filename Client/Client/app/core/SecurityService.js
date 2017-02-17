@@ -71,7 +71,7 @@
             var client_id = 'angular_client_implicit';
             var redirect_uri = 'https://localhost:44394/callback.html';
             var response_type = "token";
-            var scope = "management";
+            var scope = "management secret";
             var nonce = "N" + Math.random() + "" + Date.now();
             var state = Date.now() + "" + Math.random();
 

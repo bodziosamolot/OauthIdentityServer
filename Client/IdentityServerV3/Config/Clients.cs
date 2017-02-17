@@ -19,7 +19,7 @@ namespace IdServer.Config
                     ClientName = "Trip Gallery (Implicit)",
                     Flow = Flows.Implicit,
                     AllowAccessToAllScopes = true,
-
+                    AccessTokenType = AccessTokenType.Jwt,
 
                     // redirect = URI of the Angular application callback page
                     RedirectUris = new List<string>
