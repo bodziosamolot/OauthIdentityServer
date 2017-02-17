@@ -67,34 +67,26 @@
         var authorize = function () {
             console.log("AuthorizedController time to log on");
 
-            //GET /authorize?
-            //response_type=code%20id_token
-            //&client_id=s6BhdRkqt3
-            //&redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
-            //&scope=openid%20profile%data
-            //&nonce=n-0S6_WzA2Mj
-            //&state=af0ifjsldkj HTTP/1.1
-
-            var authorizationUrl = 'http://localhost:60060/connect/authorize';
-            var client_id = 'angularclient';
-            var redirect_uri = 'https://localhost:61488/loggedIn';
-            var response_type = "id_token token";
-            var scope = "dataEventRecords securedFiles openid";
+            var authorizationUrl = 'https://localhost:44308/identity/connect/authorize';
+            var client_id = 'angular_client_implicit';
+            var redirect_uri = 'https://localhost:44394/callback.html';
+            var response_type = "token";
+            var scope = "management";
             var nonce = "N" + Math.random() + "" + Date.now();
             var state = Date.now() + "" + Math.random();
 
             localStorageService.set("authNonce", nonce);
             localStorageService.set("authStateControl", state);
-            console.log("AuthorizedController created. adding myautostate: " + localStorageService.get("authStateControl"));
+            console.log("Aut1horizedController created. adding myautostate: " + localStorageService.get("authStateControl"));
 
             var url =
                 authorizationUrl + "?" +
-                "response_type=" + encodeURI(response_type) + "&" +
-                "client_id=" + encodeURI(client_id) + "&" +
-                "redirect_uri=" + encodeURI(redirect_uri) + "&" +
-                "scope=" + encodeURI(scope) + "&" +
-                "nonce=" + encodeURI(nonce) + "&" +
-                "state=" + encodeURI(state);
+                    "response_type=" + encodeURI(response_type) + "&" +
+                    "client_id=" + encodeURI(client_id) + "&" +
+                    "redirect_uri=" + encodeURI(redirect_uri) + "&" +
+                    "scope=" + encodeURI(scope);
+
+            console.log(url);
 
             $window.location = url;
 

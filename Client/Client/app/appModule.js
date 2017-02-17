@@ -10,6 +10,7 @@
         'ngResource',
         'ngMessages',
         'ui.router',
+        'ngResource',
 
         'core.module',
 

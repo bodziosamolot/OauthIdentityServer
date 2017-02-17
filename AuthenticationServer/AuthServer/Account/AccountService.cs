@@ -37,7 +37,7 @@ namespace IdentityServer4.Quickstart.UI
                 return new LoginViewModel
                 {
                     EnableLocalLogin = false,
-                    ReturnUrl = returnUrl,
+                    ReturnUrl = context?.RedirectUri,
                     Username = context?.LoginHint,
                     ExternalProviders = new ExternalProvider[] {new ExternalProvider { AuthenticationScheme = context.IdP } }
                 };
@@ -86,7 +86,7 @@ namespace IdentityServer4.Quickstart.UI
             {
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
-                ReturnUrl = returnUrl,
+                ReturnUrl = context?.RedirectUri,
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray()
             };

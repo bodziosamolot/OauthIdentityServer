@@ -3,9 +3,9 @@
 
     angular.module('core.module')
     .constant("config", {
-        apiUrl: "http://localhost:60136",
-        loginUrl: "http://localhost:60060/connect/authorize",
-        issuerUri: "http://localhost:60060/",
+        apiUrl: "http://localhost:60682",
+        loginUrl: "https://localhost:44308/identity/connect/authorize",
+        issuerUri: "https://localhost:44308/identity",
         redirectUrl: "http://localhost:61488/#!/home"
     });
 }());

@@ -12,3 +12,15 @@
 /AuthenticationServer/AuthServer/bin/Debug/netcoreapp1.0
 /AuthenticationServer/AuthServer/obj
 /AuthenticationServer/packages
+/Client/API/bin
+/Client/API/Content
+/Client/API/fonts
+/Client/API/obj/Debug
+/Client/API/Scripts
+/Client/Constants/bin/Debug
+/Client/Constants/obj/Debug
+/Client/IdentityServerV3/bin
+/Client/IdentityServerV3/Certificates/MyKey.pvk
+/Client/IdentityServerV3/Certificates/MyKey.pfx
+/Client/IdentityServerV3/Certificates/MyKey.cer
+/Client/IdentityServerV3/obj/Debug

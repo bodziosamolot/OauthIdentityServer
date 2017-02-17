@@ -1,14 +1,27 @@
 ﻿<div class="row">
     <div class="col-md-offset-4">
-        <h1 ng-cloak restrict access="Admin">Assigned role: {{vm.authData.roles}}</h1>
-        <h1>Hello, {{ vm.test }}!</h1>
-        <p>Welcome to BJJ Club.</p>
-        <input oauth-login-button
-               type="button"
-               value="Login"
-               state="vm.loginUrl"
-               class="btn"/>
+        <h2>Public values</h2>
+        <ul>
+            <li ng-repeat="value in vm.publicValues">{{value}}</li>
+        </ul>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.performLogin()">Sign in</button>
+        <h2>Management values</h2>
+        <ul ng-if="vm.authorized">
+            <li ng-repeat="value in vm.managementValues">{{value}}</li>
+        </ul>
+        <h3 ng-if="!vm.authorized">Not authorized</h3>
+
+        <h2>Secret values</h2>
+        <ul ng-if="vm.authorized">
+            <li ng-repeat="value in vm.secretValues">{{value}}</li>
+        </ul>
+        <h3 ng-if="!vm.authorized">Not authorized</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.getData()">Get API data</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.performLogin()">Sign in</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.clearStorage()">Clear storage</button>
     </div>
 </div>

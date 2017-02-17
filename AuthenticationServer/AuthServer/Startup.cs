@@ -51,11 +51,10 @@ namespace AuthServer
 
             services.AddIdentityServer()
                 .AddSigningCredential(cert)
-                .AddInMemoryClients(Config.GetClients())
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())                                
                 .AddAspNetIdentity<ApplicationUser>()
-                .AddTemporarySigningCredential()
                 .AddProfileService<IdentityWithAdditionalClaimsProfileService>();
 
             services.AddMvc();

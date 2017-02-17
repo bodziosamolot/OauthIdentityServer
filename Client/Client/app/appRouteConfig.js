@@ -7,7 +7,7 @@
 
     function routeConfig($stateProvider, $urlRouterProvider, $httpProvider) {
 
-        //$httpProvider.interceptors.push('authInterceptorService');
+        $httpProvider.interceptors.push('authInterceptorService');
 
         $urlRouterProvider.otherwise('home');
 
