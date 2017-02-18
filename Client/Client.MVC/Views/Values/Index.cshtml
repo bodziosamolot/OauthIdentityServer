@@ -1,0 +1,37 @@
+﻿@model Client.MVC.Models.ValueViewModel
+
+@{
+    ViewBag.Title = "Values";
+}
+
+<div class="container">
+    <h2>Public values</h2>
+    @foreach (var item in Model.PublicValues)
+    {
+        <div class="col-md-3 bottomMarginDefault">
+            <div>@item</div>
+        </div>
+    }
+
+    @if (Model.SecretValues != null)
+    {
+        <h2>Secret values</h2>
+        foreach (var item in Model.SecretValues)
+        {
+            <div class="col-md-3 bottomMarginDefault">
+                <div>@item</div>
+            </div>
+        }
+    }
+
+    @if (Model.ManagementValues != null)
+    {
+        <h2>Management values</h2>
+        foreach (var item in Model.ManagementValues)
+        {
+            <div class="col-md-3 bottomMarginDefault">
+                <div>@item</div>
+            </div>
+        }
+    }
+</div>

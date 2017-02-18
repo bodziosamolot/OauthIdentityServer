@@ -24,3 +24,5 @@
 /Client/IdentityServerV3/Certificates/MyKey.pfx
 /Client/IdentityServerV3/Certificates/MyKey.cer
 /Client/IdentityServerV3/obj/Debug
+/Client/Client.MVC/bin
+/Client/Client.MVC/obj/Debug

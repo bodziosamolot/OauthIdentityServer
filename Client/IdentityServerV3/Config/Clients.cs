@@ -26,6 +26,24 @@ namespace IdServer.Config
                     {
                         "https://localhost:44394/callback.html"
                     }
+                },
+                new Client
+                {
+                    ClientId = "mvc_client_client_credential",
+                    ClientName = "MVC Client",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("myrandomclientsecret".Sha256())
+                    },
+                    Flow = Flows.ClientCredentials,
+                    AllowAccessToAllScopes = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+
+                    // redirect = URI of the Angular application callback page
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:56538/callback"
+                    }
                 }
             };
         }
