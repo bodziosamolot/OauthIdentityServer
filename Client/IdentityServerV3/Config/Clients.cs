@@ -37,13 +37,7 @@ namespace IdServer.Config
                     },
                     Flow = Flows.ClientCredentials,
                     AllowAccessToAllScopes = true,
-                    AccessTokenType = AccessTokenType.Jwt,
-
-                    // redirect = URI of the Angular application callback page
-                    RedirectUris = new List<string>
-                    {
-                        "http://localhost:56538/callback"
-                    }
+                    AccessTokenType = AccessTokenType.Jwt
                 },
                 new Client
                 {
