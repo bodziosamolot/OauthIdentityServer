@@ -14,7 +14,10 @@ namespace Constants
         public const string AuthEndoint = "https://localhost:44308/identity/connect/authorize";
         public const string TokenEndoint = "https://localhost:44308/identity/connect/token";
 
-        public const string MVCClientSecret = "myrandomclientsecret";
+        public const string MVCClientSecret = "mvc_client_client_credential";
+        public const string MVCClientSecretAuthCode = "mvc_client_auth_code";
+
         public const string MVCCallback = "http://localhost:56538/callback";
+        public const string MVCAuthCodeCallback = "http://localhost:56539/callback";
     }
 }

@@ -33,7 +33,7 @@ namespace IdServer.Config
                     ClientName = "MVC Client",
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret("myrandomclientsecret".Sha256())
+                        new Secret("mvc_client_client_credential".Sha256())
                     },
                     Flow = Flows.ClientCredentials,
                     AllowAccessToAllScopes = true,
@@ -43,6 +43,24 @@ namespace IdServer.Config
                     RedirectUris = new List<string>
                     {
                         "http://localhost:56538/callback"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "mvc_client_auth_code",
+                    ClientName = "MVC Client",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("mvc_client_auth_code".Sha256())
+                    },
+                    Flow = Flows.AuthorizationCode,
+                    AllowAccessToAllScopes = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+
+                    // redirect = URI of the Angular application callback page
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:56539/callback"
                     }
                 }
             };

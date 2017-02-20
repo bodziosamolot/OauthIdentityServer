@@ -26,3 +26,9 @@
 /Client/IdentityServerV3/obj/Debug
 /Client/Client.MVC/bin
 /Client/Client.MVC/obj/Debug
+/Client/Client.JS.Implicit/bin
+/Client/Client.JS.Implicit/bin
+/Client/Client.JS.Implicit/node_modules
+/Client/Client.JS.Implicit/obj/Debug
+/Client/Client.JS.Implicit/obj/Debug
+/Client/Client.JS.Implicit.OpenId/bin/roslyn
