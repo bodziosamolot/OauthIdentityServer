@@ -1,6 +1,6 @@
 using System;
 
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.ClientCredentials.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

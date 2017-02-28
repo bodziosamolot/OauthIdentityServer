@@ -4,34 +4,40 @@
     ViewBag.Title = "Values";
 }
 
-<div class="container">
-    <h2>Public values</h2>
-    @foreach (var item in Model.PublicValues)
-    {
-        <div class="col-md-3 bottomMarginDefault">
-            <div>@item</div>
-        </div>
-    }
-
-    @if (Model.SecretValues != null)
-    {
-        <h2>Secret values</h2>
-        foreach (var item in Model.SecretValues)
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        @if (Model != null && Model.PublicValues != null)
         {
-            <div class="col-md-3 bottomMarginDefault">
-                <div>@item</div>
-            </div>
+            <h2>Public values</h2>
+            <ul class="bg-success">
+                @foreach (var item in Model.PublicValues)
+                {
+                    <li>@item</li>
+                }
+            </ul>
         }
-    }
 
-    @if (Model.ManagementValues != null)
-    {
-        <h2>Management values</h2>
-        foreach (var item in Model.ManagementValues)
+
+        @if (Model != null && Model.SecretValues != null)
         {
-            <div class="col-md-3 bottomMarginDefault">
-                <div>@item</div>
-            </div>
+            <h2>Management values</h2>
+            <ul class="bg-success">
+                @foreach (var item in Model.SecretValues)
+                {
+                    <li>@item</li>
+                }
+            </ul>
         }
-    }
+
+        @if (Model != null && Model.ManagementValues != null)
+        {
+            <h2>Management values</h2>
+            <ul class="bg-success">
+                @foreach (var item in Model.ManagementValues)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+    </div>
 </div>

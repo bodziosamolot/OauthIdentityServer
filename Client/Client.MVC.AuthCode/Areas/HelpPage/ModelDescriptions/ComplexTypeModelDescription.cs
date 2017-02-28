@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.AuthCode.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

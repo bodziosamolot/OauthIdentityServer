@@ -68,8 +68,8 @@
             console.log("AuthorizedController time to log on");
 
             var authorizationUrl = 'https://localhost:44308/identity/connect/authorize';
-            var client_id = 'angular_client_implicit';
-            var redirect_uri = 'https://localhost:44394/callback.html';
+            var client_id = 'angular_client_implicit_open_id';
+            var redirect_uri = 'https://localhost:44391/callback.html';
             var response_type = "token";
             var scope = "management secret";
             var nonce = "N" + Math.random() + "" + Date.now();

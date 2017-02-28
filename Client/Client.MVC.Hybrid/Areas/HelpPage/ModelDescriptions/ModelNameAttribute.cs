@@ -1,6 +1,6 @@
 using System;
 
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.Hybrid.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

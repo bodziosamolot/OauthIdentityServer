@@ -5,40 +5,61 @@
         .module('core.module')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['authService', '$scope', 'oauthService', 'SecurityService', 'ValuesResource'];
+    HomeController.$inject = ['authService', '$scope', 'oauthService', 'SecurityService', 'ValuesResource', 'OidcManager'];
 
-    function HomeController(authService, $scope, oauthService, SecurityService, ValuesResource) {
+    function HomeController(authService, $scope, oauthService, SecurityService, ValuesResource, OidcManager) {
 
         var vm = this;
 
-        vm.initImplicit = _initImplicit;
-        vm.performLogin = _performLogin;
+        Oidc.Log.logger = console;
+        Oidc.Log.level = Oidc.Log.INFO;
+
+        //vm.mgr = OidcManager.OidcTokenManager();
         vm.getData = _getData;
-        vm.clearStorage = _clearStorage;
+        vm.logOut = _logOut;
+        vm.performLogin = _performLogin;
+        vm.iFrameLogin = _iFrameLogin;
         vm.publicValues = undefined;
+        vm.clearLocalStorage = _clearLocalStorage;
         vm.managementValues = undefined;
         vm.secretValues = undefined;
-        vm.authorized = true;
+        vm.getUser = _getUser;
+        vm.userName = undefined;
+        vm.managementAuthorized = true;
+        vm.secretAuthorized = true;
 
-        getLoginUrl();
+        var mgr = OidcManager.OidcTokenManager();
 
-        function getLoginUrl() {
-            oauthService.createLoginUrl().then(function (url) {
-                console.log(url);
-                vm.loginUrl = url;
+        function _clearLocalStorage() {
+            localStorage.clear();
+        }
+
+        function _getUser() {
+            mgr.getUser().then(function (user) {
+                console.log("got user"+ user.profile.given_name);
+            }).catch(function (err) {
+                console.log(err);
             });
         }
 
-        function _initImplicit() {
-            oauthService.initImplicitFlow('login');
-        }
-
         function _performLogin() {
-            SecurityService.DoAuthorization();
+            mgr.signinRedirect().then(function () {
+            }).catch(function (err) {
+            });
         }
 
-        function _clearStorage() {
-            localStorage['access_token'] = undefined;
+        function _iFrameLogin() {
+            mgr.signinSilent().then(function () {
+            }).catch(function (err) {
+            });
+        }
+
+        function _logOut() {
+
+            mgr.signoutRedirect().then(function () {
+                console.log('logged out');
+            }).catch(function (err) {
+            });
         }
 
         function _getData() {
@@ -50,16 +71,18 @@
 
             ValuesResource.ManagementValues.query({}, function (response) {
                 vm.managementValues = response;
-                vm.authorized = true;
+                vm.managementAuthorized = true;
             },function(error) {
                 console.log(error);
-                vm.authorized = false;
+                vm.managementAuthorized = false;
             });
 
             ValuesResource.SecretValues.query({}, function (response) {
                 vm.secretValues = response;
+                vm.secretAuthorized = true;
             }, function (error) {
                 console.log(error);
+                vm.secretAuthorized = false;
             });
         }
 

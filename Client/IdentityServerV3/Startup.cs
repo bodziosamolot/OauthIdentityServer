@@ -8,6 +8,7 @@ using Owin;
 using Constants;
 using IdServer.Config;
 using IdentityServer3.Core.Logging;
+using IdentityServer3.Core.Services.Default;
 using Serilog;
 
 namespace IdServer
@@ -28,6 +29,14 @@ namespace IdServer
                                 .UseInMemoryScopes(Scopes.Get())
                                 .UseInMemoryUsers(Users.Get());
 
+                var corsPolicyService = new DefaultCorsPolicyService()
+                {
+                    AllowAll = true
+                };
+
+                idServerServiceFactory.CorsPolicyService = new
+                    Registration<IdentityServer3.Core.Services.ICorsPolicyService>(corsPolicyService);
+
                 var options = new IdentityServerOptions
                 {
                     Factory = idServerServiceFactory,
@@ -35,6 +44,11 @@ namespace IdServer
                     IssuerUri = IdentityConstants.IssuerUri,
                     PublicOrigin = IdentityConstants.Origin,
                     SigningCertificate = LoadCertificate(),
+                    AuthenticationOptions = new AuthenticationOptions
+                    {
+                        EnablePostSignOutAutoRedirect = true,
+                        PostSignOutAutoRedirectDelay = 5
+                    },
                     LoggingOptions = new LoggingOptions()
                     {
                         WebApiDiagnosticsIsVerbose = true,

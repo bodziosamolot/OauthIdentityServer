@@ -8,6 +8,21 @@
     function routeConfig($stateProvider, $urlRouterProvider, $httpProvider) {
 
         $httpProvider.interceptors.push('authInterceptorService');
+        //$httpProvider.interceptors.push(function (OidcManager) {
+        //    return {
+        //        'request': function (config) {
+
+        //            // if it's a request to the API, we need to provide the
+        //            // access token as bearer token.
+        //            if (config.url.indexOf("https://localhost:44396") === 0) {
+        //                config.headers.Authorization = 'Bearer ' + OidcManager.OidcTokenManager().access_token;
+        //            }
+
+        //            return config;
+        //        }
+
+        //    };
+        //});
 
         $urlRouterProvider.otherwise('home');
 

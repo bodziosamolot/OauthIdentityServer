@@ -90,8 +90,11 @@
     <Content Include="app\core\loggedInController.js" />
     <Content Include="app\core\loggedIn.html" />
     <Content Include="app\core\main.controller.js" />
+    <Content Include="app\core\oidc.manager.js" />
     <Content Include="app\core\SecurityService.js" />
     <Content Include="app\core\ValuesResource.js" />
+    <Content Include="logout_callback.html" />
+    <Content Include="silent_callback.html" />
     <Content Include="callback.html" />
     <Content Include="Content\angular-material.css" />
     <Content Include="Content\angular-material.layout-attributes.css" />
@@ -167,6 +170,9 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular\angular.js" />
     <Content Include="Scripts\angular\angular.min.js" />
+    <Content Include="Scripts\oidc-client.js" />
+    <Content Include="Scripts\oidc-token-manager\oidc-token-manager.js" />
+    <Content Include="Scripts\oidc-token-manager\oidc-token-manager.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -187,7 +193,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61488</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44394/</IISUrl>
+          <IISUrl>https://localhost:44391/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

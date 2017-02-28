@@ -1,4 +1,4 @@
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.ClientCredentials.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

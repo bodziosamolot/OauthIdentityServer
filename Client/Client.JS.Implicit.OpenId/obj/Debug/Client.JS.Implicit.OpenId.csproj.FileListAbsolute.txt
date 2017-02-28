@@ -25,3 +25,4 @@ F:\Szkolenie\Oauth 2 Identity Server\Client\Client.JS.Implicit.OpenId\bin\Micros
 F:\Szkolenie\Oauth 2 Identity Server\Client\Client.JS.Implicit.OpenId\bin\Microsoft.Owin.Host.SystemWeb.xml
 F:\Szkolenie\Oauth 2 Identity Server\Client\Client.JS.Implicit.OpenId\obj\Debug\Client.JS.Implicit.OpenId.dll
 F:\Szkolenie\Oauth 2 Identity Server\Client\Client.JS.Implicit.OpenId\obj\Debug\Client.JS.Implicit.OpenId.pdb
+F:\Szkolenie\Oauth 2 Identity Server\Client\Client.JS.Implicit.OpenId\obj\Debug\Client.JS.Implicit.OpenId.csprojResolveAssemblyReference.cache

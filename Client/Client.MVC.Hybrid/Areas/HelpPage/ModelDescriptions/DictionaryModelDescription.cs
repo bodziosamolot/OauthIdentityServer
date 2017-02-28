@@ -1,4 +1,4 @@
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.Hybrid.Areas.HelpPage.ModelDescriptions
 {
     public class DictionaryModelDescription : KeyValuePairModelDescription
     {

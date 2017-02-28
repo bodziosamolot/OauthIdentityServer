@@ -1,6 +1,6 @@
 using System;
 
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.Hybrid.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

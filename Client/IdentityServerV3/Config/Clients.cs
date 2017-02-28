@@ -29,6 +29,26 @@ namespace IdServer.Config
                 },
                 new Client
                 {
+                    ClientId = "angular_client_implicit_open_id",
+                    ClientName = "Trip Gallery (Implicit)",
+                    Flow = Flows.Implicit,
+                    AllowAccessToAllScopes = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    AccessTokenLifetime = 75,// 60,
+                    PostLogoutRedirectUris = new List<string>()
+                    {
+                        "https://localhost:44391/logout_callback.html"
+                    },
+                    // redirect = URI of the Angular application callback page
+                    RedirectUris = new List<string>
+                    {
+                        "https://localhost:44391/callback.html",
+                        "https://localhost:44391/silent_callback.html",
+                        "https://localhost:44391/logout_callback.html"
+                    }
+                },
+                new Client
+                {
                     ClientId = "mvc_client_client_credential",
                     ClientName = "MVC Client",
                     ClientSecrets = new List<Secret>
@@ -55,6 +75,28 @@ namespace IdServer.Config
                     RedirectUris = new List<string>
                     {
                         "http://localhost:56539/callback"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "mvc_client_hybrid",
+                    ClientName = "MVC Client",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("mvc_client_hybrid".Sha256())
+                    },
+                    Flow = Flows.Hybrid,
+                    AllowAccessToAllScopes = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        "http://localhost:56541/Home/Index"
+                    },
+
+                    // redirect = URI of the Angular application callback page
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:56541/Values/Index"
                     }
                 }
             };

@@ -1,4 +1,4 @@
-namespace Client.MVC.Areas.HelpPage.ModelDescriptions
+namespace Client.MVC.AuthCode.Areas.HelpPage.ModelDescriptions
 {
     public class KeyValuePairModelDescription : ModelDescription
     {

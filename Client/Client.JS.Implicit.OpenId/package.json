@@ -3,5 +3,8 @@
     "angular-oauth2-oidc": "^1.0.20",
     "angular-oidc": "^1.1.2",
     "oidc-client": "^1.3.0-beta.3"
+  },
+  "devDependencies": {
+    "oidc-client": "^1.3.0-beta.3"
   }
 }

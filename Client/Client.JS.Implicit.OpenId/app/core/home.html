@@ -6,22 +6,25 @@
         </ul>
 
         <h2>Management values</h2>
-        <ul class="bg-success" ng-if="vm.authorized">
+        <ul class="bg-success" ng-if="vm.managementAuthorized">
             <li ng-repeat="value in vm.managementValues">{{value}}</li>
         </ul>
-        <p ng-if="!vm.authorized" class="bg-danger">Not authorized</p>
+        <p ng-if="!vm.managementAuthorized" class="bg-danger">Not authorized</p>
 
         <h2>Secret values</h2>
-        <ul class="bg-success" ng-if="vm.authorized">
+        <ul class="bg-success" ng-if="vm.secretAuthorized">
             <li ng-repeat="value in vm.secretValues">{{value}}</li>
         </ul>
-        <p ng-if="!vm.authorized" class="bg-danger">Not authorized</p>
+        <p ng-if="!vm.secretAuthorized" class="bg-danger">Not authorized</p>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
         <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.getData()">Get API data</button>
         <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.performLogin()">Sign in</button>
-        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.clearStorage()">Clear storage</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.iFrameLogin()">IFrame sign in</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.logOut()">Logout {{}}</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.getUser()">Get User</button>
+        <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.clearLocalStorage()">Clear Local Storager</button>
     </div>
 </div>

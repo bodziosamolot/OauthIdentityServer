@@ -16,8 +16,10 @@ namespace Constants
 
         public const string MVCClientSecret = "mvc_client_client_credential";
         public const string MVCClientSecretAuthCode = "mvc_client_auth_code";
+        public const string MVCClientSecretHybrid = "mvc_client_hybrid";
 
         public const string MVCCallback = "http://localhost:56538/callback";
         public const string MVCAuthCodeCallback = "http://localhost:56539/callback";
+        public const string MVCHybridCallback = "http://localhost:56541/Values/Index";
     }
 }

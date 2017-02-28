@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 
-namespace Client.MVC.Areas.HelpPage
+namespace Client.MVC.Hybrid.Areas.HelpPage
 {
     /// <summary>
     /// This is used to identify the place where the sample should be applied.

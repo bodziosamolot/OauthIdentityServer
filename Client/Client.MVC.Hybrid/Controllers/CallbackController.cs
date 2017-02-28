@@ -21,15 +21,15 @@ namespace Client.MVC.Controllers
             // with the auth code, we can request an access token.
             var client = new TokenClient(
                 IdentityConstants.TokenEndoint,
-                "tripgalleryauthcode",
-                 IdentityConstants.MVCClientSecret);
+                "mvc_client_hybrid",
+                 IdentityConstants.MVCClientSecretHybrid);
 
             var tokenResponse = await client.RequestAuthorizationCodeAsync(
                 authCode,
                 IdentityConstants.MVCCallback);
 
             // we save the token in a cookie for use later on
-            Response.Cookies["ClientMVCCookie"]["access_token"] = tokenResponse.AccessToken;
+            Response.Cookies["ClientMVCCookie.Hybrid"]["access_token"] = tokenResponse.AccessToken;
 
             // get the state (uri to return to)
             var state = Request.QueryString["state"];

@@ -9,7 +9,11 @@
 
     function MainController(authService) {
 
-        var vm = this;
+        //var vm = this;
+        //vm.mgr = OidcManager.OidcTokenManager();
+        //if (vm.mgr.expired) {
+        //    vm.mgr.redirectForToken();
+        //}
 
     }
 })();

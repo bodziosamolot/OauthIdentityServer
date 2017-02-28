@@ -2,17 +2,30 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 
 namespace Client.MVC.Controllers
 {
+    [Authorize]
     public class ValuesController : Controller
     {
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string submit)
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                var identity = this.User.Identity as ClaimsIdentity;
+                foreach (var claim in identity.Claims)
+                {
+                    Debug.WriteLine(claim.Type + " - " + claim.Value);
+                }
+            }
+
             ViewBag.Title = "Values";
 
             var httpClient = ClientHttpClient.GetClient();
@@ -37,11 +50,9 @@ namespace Client.MVC.Controllers
                 ? JsonConvert.DeserializeObject<List<string>>(managementAsString)
                 : null;
 
-            var vm = new ValueViewModel(publicValuesDeserialized,
+            return View(new ValueViewModel(publicValuesDeserialized,
                 secretValuesDeserialized,
-                managementValuesDeserialized);
-
-            return View(vm);
+                managementValuesDeserialized));
         }
     }
 }

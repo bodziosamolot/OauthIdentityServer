@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Owin.Security;
 
 namespace Client.MVC.Controllers
 {
@@ -13,6 +14,12 @@ namespace Client.MVC.Controllers
             ViewBag.Title = "Home Page";
 
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            Request.GetOwinContext().Authentication.SignOut(new AuthenticationProperties { RedirectUri = "http://localhost:56541/Home/Index" });
+            return Redirect("/");
         }
     }
 }

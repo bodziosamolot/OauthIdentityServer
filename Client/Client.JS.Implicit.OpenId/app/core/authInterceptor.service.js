@@ -5,9 +5,9 @@
         .module('core.module')
         .service('authInterceptorService', authInterceptorService);
 
-    authInterceptorService.$inject = ['localStorageService'];
+    authInterceptorService.$inject = ['localStorageService', 'OidcManager'];
 
-    function authInterceptorService(localStorageService) {
+    function authInterceptorService(localStorageService, OidcManager) {
 
         var vm = this;
 

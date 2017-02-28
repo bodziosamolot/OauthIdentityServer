@@ -14,6 +14,7 @@ using Newtonsoft.Json.Serialization;
 using Owin;
 using Swashbuckle.Application;
 using IdentityServer3.AccessTokenValidation;
+using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Jwt;
 
 [assembly: OwinStartup(typeof(API.Startup))]
@@ -46,6 +47,9 @@ namespace API
             //        IssuerSigningKey = new X509SecurityKey(certificate)
             //    }
             //});
+
+            // Reset default claim mapping
+            JwtSecurityTokenHandler.InboundClaimTypeMap = new Dictionary<string, string>();
 
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
             {

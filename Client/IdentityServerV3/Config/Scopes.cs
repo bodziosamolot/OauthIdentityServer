@@ -12,12 +12,19 @@ namespace IdServer.Config
         {
             return new List<Scope>
             {
+                StandardScopes.OpenId,
+                StandardScopes.ProfileAlwaysInclude,
+                StandardScopes.AddressAlwaysInclude,
                 new Scope
                 {
                     Name = "management",
                     DisplayName = "Management",
                     Description = "Management",
-                    Type = ScopeType.Resource
+                    Type = ScopeType.Resource,
+                    Claims = new List<ScopeClaim>()
+                    {
+                        new ScopeClaim("role", false)
+                    }
                 },
                 new Scope
                 {

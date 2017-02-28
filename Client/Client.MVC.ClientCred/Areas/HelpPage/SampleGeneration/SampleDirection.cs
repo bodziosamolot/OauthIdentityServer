@@ -1,4 +1,4 @@
-namespace Client.MVC.Areas.HelpPage
+namespace Client.MVC.ClientCredentials.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response
